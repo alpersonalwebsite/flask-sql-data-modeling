@@ -1,7 +1,7 @@
 import psycopg2
 
 connection = psycopg2.connect('dbname=test')
-# If you want to use a different user conn = psycopg2.connect('dbname=test user=aldiaz')
+# If you want to use a different user conn = psycopg2.connect('dbname=test user=your_username')
 
 
 # Open a cursor to perform database operations
@@ -20,7 +20,6 @@ cursor.execute("""
   );
 """)
 
-# Insert data
 cursor.execute('INSERT INTO my_tests (id, completed) VALUES (1, False);')
 
 cursor.execute('SELECT * from my_tests')
