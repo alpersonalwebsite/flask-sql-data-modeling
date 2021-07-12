@@ -1,6 +1,6 @@
 # Flask and SQL Data Modeling
 
-??? Under Development
+Under Development
 
 ## Overview
 
@@ -189,13 +189,32 @@ dropdb test && createdb test
 Then:
 
 ```shell
-python extras/psycopg2.py
+python extras/psycopg2-sample.py
 ```
 
 Sample output:
 
 ```shell
 [(1, False)]
+```
+
+If you want to use `string interpolation` to compose your SQL query...
+
+```py
+# Original
+cursor.execute('INSERT INTO my_tests (id, completed) VALUES (1, False);')
+
+# Example 1: %s and tuple
+cursor.execute('INSERT INTO my_tests (id, completed) VALUES (%s, %s);', (1, False))
+
+# Example 2: %(my_dic_key) and dictionary
+SQL = 'INSERT INTO my_tests (id, completed) VALUES (%(id)s, %(completed)s);'
+
+data = {
+  'id': 1,
+  'completed': False
+}
+cursor.execute(SQL, data)
 ```
 
 ---
