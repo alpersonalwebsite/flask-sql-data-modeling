@@ -1,11 +1,13 @@
 import psycopg2
 
 connection = psycopg2.connect('dbname=test')
-# If you want to use a different user conn = psycopg2.connect('dbname=test user=your_username')
+# If you want to use a different user conn = psycopg2.connect('dbname=test
+# user=your_username')
 
 
 # Open a cursor to perform database operations
-# A cursor is an interface that allows us to start queing up work and transactions
+# A cursor is an interface that allows us to start queing up work and
+# transactions
 cursor = connection.cursor()
 
 # drop any existing my_tests table

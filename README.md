@@ -4,7 +4,16 @@ Under Development
 
 ## Overview
 
-This is an easy, basic and raw example of **HOW to** implement ???
+This is an easy, basic and raw example of **HOW to** model data with `SQLAlchemy`.
+
+I'm including and `extras` folder with basic variations:
+- PSQL
+- psycopg2
+- psycopg2 and SQLAlchemy
+- psycopg2 and SQLAlchemy with SQL Expression
+- psycopg2 and SQLAlchemy ORM
+
+It purpose is **merely educational**
 
 ---
 
@@ -171,7 +180,7 @@ Sample output:
 (1 row)
 ```
 
-### psycopg2 Create table and persist data
+### psycopg2: Create table and persist data
 
 BE SURE you are not naming your file `psycopg2.py` our you will end importing our script instead of the `psycopg2 module`
 
@@ -217,8 +226,38 @@ data = {
 cursor.execute(SQL, data)
 ```
 
+### psycopg2 and SQLAlchemy: Create table and persist data
+
+```shell
+python extras/psycopg2-and-sqlalchemy.py
+```
+
+Sample output:
+
+```shell
+[(1, False)]
+```
+
+### psycopg2 and SQLAlchemy with SQL Expression: Create table and persist data
+
+```shell
+python extras/psycopg2-sqlalchemy-and-sql-expressions.py
+```
+
+Sample output:
+
+```shell
+[(1, False)]
+```
+
+### psycopg2 and SQLAlchemy ORM: Create table and persist data
+
+
+
 ---
 
 ## Kudos
 
 Extended version of Udacity's FSN SQL Data Modeling
+
+
